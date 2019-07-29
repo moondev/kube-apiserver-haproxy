@@ -1,0 +1,8 @@
+FROM haproxy:1.9.4
+
+EXPOSE 6443
+EXPOSE 9000
+
+COPY haproxy.cfg /kube-haproxy.cfg
+
+CMD ["haproxy", "-f", "/kube-haproxy.cfg"]
